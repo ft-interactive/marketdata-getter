@@ -1,6 +1,6 @@
 # market-getter
 
-For getting data from FT market data in client side apps
+For getting data from FT market data in interactive graphics apps
 
 usage 
 ```js
@@ -11,4 +11,9 @@ var getter = marketdata.marketdata(process.env.MARKETKEY)
     });
 
 getter('AAPL');
+```
+
+This isnt in npm yet but you can install it in you npm/yarn by adding the foolowing line to your depndencies
+```js
+"marketdata-getter": "git+https://github.com/ft-interactive/marketdata-getter.git"
 ```
