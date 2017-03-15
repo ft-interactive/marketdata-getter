@@ -1,0 +1,31 @@
+{
+  "name": "marketdata-getter",
+  "version": "0.0.1",
+  "description": "{DESCRIPTION}",
+  "keywords": [
+    "ft",
+    "data"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "build/marketdata.js",
+  "jsnext:main": "index",
+  "homepage": "https://github.com/ft-interactive/marketdata-getter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ft-interactive/marketdata-getter.git"
+  },
+  "scripts": {
+    "pretest": "rm -rf build && mkdir build && rollup -f umd -n marketdata -o build/marketdata.js -- index.js",
+    "test": "tape 'test/**/*-test.js'",
+    "prepublish": "npm run test && uglifyjs build/marketdata.js -c -m -o build/marketdata.min.js",
+    "postpublish": "zip -j build/marketdata.zip -- LICENSE README.md build/marketdata.js build/marketdata.min.js"
+  },
+  "devDependencies": {
+    "rollup": "0.27",
+    "tape": "4",
+    "uglify-js": "2"
+  },
+  "dependencies": {
+    "d3-request": "^1.0.4"
+  }
+}
