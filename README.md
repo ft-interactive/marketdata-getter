@@ -17,3 +17,8 @@ This isnt in npm yet but you can install it in you npm/yarn by adding the foolow
 ```js
 "marketdata-getter": "git+https://github.com/ft-interactive/marketdata-getter.git"
 ```
+
+TODO:
+
+Be a bit smarter about dealing with multi symbol requests
+i.e. at that moment using the symbol `AAPL,XOM` will return an set of set of results and will be hashed as `AAPL,XOM` as distinct from `XOM,AAPL` so a request for the latter will result in a new http request. I don't think this is what we want tot happen
