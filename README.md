@@ -11,6 +11,8 @@ var getter = marketdata.marketdata(process.env.MARKETKEY)
     });
 
 getter('AAPL');
+
+getter('AAPL,XOM', true); //the true switch is a sets the getter to request performance metrics (market cap etc) rathert than current quote
 ```
 
 This isnt in npm yet but you can install it in you npm/yarn by adding the foolowing line to your depndencies
@@ -22,3 +24,5 @@ TODO:
 
 Be a bit smarter about dealing with multi symbol requests
 i.e. at that moment using the symbol `AAPL,XOM` will return an set of set of results and will be hashed as `AAPL,XOM` as distinct from `XOM,AAPL` so a request for the latter will result in a new http request. I don't think this is what we want tot happen
+
+have a better way of differntiating requests for performance metrics
