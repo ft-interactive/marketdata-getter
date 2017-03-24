@@ -15,9 +15,9 @@ export default function(key) {
     if( data[hashkey] !== undefined){
       callback( data[key] );
     }else{
-      var URL = 'http://markets.ft.com/research/webservices/securities/v1/quotes?symbols=' + symbol + '&source=' + key;
+      var URL = 'https://markets.ft.com/research/webservices/securities/v1/quotes?symbols=' + symbol + '&source=' + key;
       if(metrics){
-        URL = 'http://markets.ft.com/research/webservices/securities/v1/performance-metrics?symbols=' + symbol + '&source=' + key;
+        URL = 'https://markets.ft.com/research/webservices/securities/v1/performance-metrics?symbols=' + symbol + '&source=' + key;
       }
 
       d3Request.json(URL, function(err, jsonData){
